@@ -22,6 +22,7 @@ from keras.callbacks import EarlyStopping
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 
+from mytool import log_results,get_result,load_data_labels
 
 """
 all you need to change is here:
@@ -62,31 +63,6 @@ print('Found %s word vectors.' % len(embeddings_index))
 print('Processing text dataset')
 
 
-def load_data_labels(TEXT_DATA_DIR):
-    texts = []  # list of text samples
-    labels_index = {}  # dictionary mapping label name to numeric id
-    labels = []  # list of label ids
-    for name in sorted(os.listdir(TEXT_DATA_DIR)):
-        path = os.path.join(TEXT_DATA_DIR, name)
-        if os.path.isdir(path):
-            label_id = len(labels_index)
-            labels_index[name] = label_id
-            for fname in sorted(os.listdir(path)):
-                if fname.isdigit():
-                    fpath = os.path.join(path, fname)
-                    if sys.version_info < (3,):
-                        f = open(fpath)
-                    else:
-                        #f = open(fpath)
-                        f = open(fpath,mode='latin-1')
-                    t = f.read()
-                    i = t.find('\n\n')  # skip header
-                    if 0 < i:
-                        t = t[i:]
-                    texts.append(t)
-                    f.close()
-                    labels.append(label_id)
-    return texts, labels, labels_index
 
 
 texts, labels, labels_index = load_data_labels(TRAIN_DATA_DIR)
@@ -237,8 +213,6 @@ y_pred = y_proba.argmax(axis=1)
 
 
 path="../model_para/RCNN3_c" + class_type + "_train_test_details.txt"
-
-from mytool import log_results,get_result
 
 accuracy,micro_precision,weighted_precision,macro_precision=get_result(y_test,y_pred)
 
