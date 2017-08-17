@@ -3,7 +3,7 @@
 Author: Xiangguo Sun
 E-mail: sunxiangguo@seu.edu.cn
 
-Although it is never an easy job to a train deep learning model, there are still some tricks you can use.
+Although it is never an easy job to train a deep learning model, there are still some tricks you can use.
 
 
 ##1. batch size
@@ -21,37 +21,37 @@ For example, you may train your model as follows:
 
 Train on 181 samples, validate on 78 samples
 Epoch 1/100
-9s - loss: 0.7635 - categorical_accuracy: 0.4530 - val_loss: 0.7072 - val_categorical_accuracy: 0.4615
+9s - loss: 0.7635 - accuracy: 0.4530 - val_loss: 0.7072 - accuracy: 0.4615
 Epoch 2/100
-9s - loss: 0.6881 - categorical_accuracy: 0.5414 - val_loss: 0.7005 - val_categorical_accuracy: 0.4615
+9s - loss: 0.6881 - accuracy: 0.5414 - val_loss: 0.7005 - accuracy: 0.4615
 Epoch 3/100
-9s - loss: 0.6762 - categorical_accuracy: 0.5967 - val_loss: 0.6810 - val_categorical_accuracy: 0.5385
+9s - loss: 0.6762 - accuracy: 0.5967 - val_loss: 0.6810 - accuracy: 0.5385
 Epoch 4/100
-9s - loss: 0.6901 - categorical_accuracy: 0.5359 - val_loss: 0.7335 - val_categorical_accuracy: 0.4615
+9s - loss: 0.6901 - accuracy: 0.5359 - val_loss: 0.7335 - accuracy: 0.4615
 Epoch 5/100
-9s - loss: 0.6979 - categorical_accuracy: 0.5580 - val_loss: 0.6711 - val_categorical_accuracy: 0.5897
+9s - loss: 0.6979 - accuracy: 0.5580 - val_loss: 0.6711 - accuracy: 0.5897
 Epoch 6/100
-9s - loss: 0.6332 - categorical_accuracy: 0.6906 - val_loss: 0.6797 - val_categorical_accuracy: 0.5641
+9s - loss: 0.6332 - accuracy: 0.6906 - val_loss: 0.6797 - accuracy: 0.5641
 Epoch 7/100
-9s - loss: 0.6240 - categorical_accuracy: 0.7238 - val_loss: 0.6884 - val_categorical_accuracy: 0.5769
+9s - loss: 0.6240 - accuracy: 0.7238 - val_loss: 0.6884 - accuracy: 0.5769
 Epoch 8/100
-9s - loss: 0.6056 - categorical_accuracy: 0.6630 - val_loss: 0.6678 - val_categorical_accuracy: 0.5128
+9s - loss: 0.6056 - accuracy: 0.6630 - val_loss: 0.6678 - accuracy: 0.5128
 Epoch 9/100
-9s - loss: 0.5853 - categorical_accuracy: 0.7569 - val_loss: 0.6936 - val_categorical_accuracy: 0.5513
+9s - loss: 0.5853 - accuracy: 0.7569 - val_loss: 0.6936 - accuracy: 0.5513
 Epoch 10/100
-9s - loss: 0.5796 - categorical_accuracy: 0.7127 - val_loss: 0.6436 - val_categorical_accuracy: 0.6154
+9s - loss: 0.5796 - accuracy: 0.7127 - val_loss: 0.6436 - accuracy: 0.6154
 Epoch 11/100
-9s - loss: 0.5341 - categorical_accuracy: 0.8122 - val_loss: 0.6872 - val_categorical_accuracy: 0.5769
+9s - loss: 0.5341 - accuracy: 0.8122 - val_loss: 0.6872 - accuracy: 0.5769
 Epoch 12/100
-9s - loss: 0.4928 - categorical_accuracy: 0.7735 - val_loss: 0.6331 - val_categorical_accuracy: 0.6538
+9s - loss: 0.4928 - accuracy: 0.7735 - val_loss: 0.6331 - accuracy: 0.6538
 Epoch 13/100
-9s - loss: 0.4851 - categorical_accuracy: 0.7735 - val_loss: 0.6655 - val_categorical_accuracy: 0.6154
+9s - loss: 0.4851 - accuracy: 0.7735 - val_loss: 0.6655 - accuracy: 0.6154
 Epoch 14/100
-9s - loss: 0.4195 - categorical_accuracy: 0.8398 - val_loss: 0.7325 - val_categorical_accuracy: 0.6154
+9s - loss: 0.4195 - accuracy: 0.8398 - val_loss: 0.7325 - accuracy: 0.6154
 Epoch 15/100
-9s - loss: 0.4572 - categorical_accuracy: 0.7459 - val_loss: 0.7757 - val_categorical_accuracy: 0.5769
+9s - loss: 0.4572 - accuracy: 0.7459 - val_loss: 0.7757 - accuracy: 0.5769
 Epoch 16/100
-9s - loss: 0.3764 - categorical_accuracy: 0.8287 - val_loss: 0.7636 - val_categorical_accuracy: 0.5897
+9s - loss: 0.3764 - accuracy: 0.8287 - val_loss: 0.7636 - accuracy: 0.5897
 train process done!!
 
 ('micro Precision score for classification model - ', 0.62962962962962965)
