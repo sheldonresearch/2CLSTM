@@ -1,4 +1,4 @@
-#How to Train Our Model?
+How to Train Our Model?
 
 Author: Xiangguo Sun
 E-mail: sunxiangguo@seu.edu.cn
@@ -6,13 +6,13 @@ E-mail: sunxiangguo@seu.edu.cn
 Although it is never an easy job to train a deep learning model, there are still some tricks you can use.
 
 
-##1. batch size
+1. batch size
 
 Generally speaking, a larger batch size will tell the model to go to a  more decisive direction, but it
 needs more time. On the other hand, a smaller batch size may lead to dramastic change and need more time to be stable.
 
 
-##2. overfited
+2. overfited
 
 You should split your raw data into 3parts: train data, validation data,and test data.
 
