@@ -118,20 +118,12 @@ labels_cat = to_categorical(np.asarray(labels))
 print('Shape of data tensor:', data.shape)
 print('Shape of label tensor:', labels_cat.shape)
 
-# split the data into a training set and a validation set
-indices = np.arange(data.shape[0])
-np.random.shuffle(indices)
-data = data[indices]
-labels_cat = labels_cat[indices]
-num_validation_samples = int(VALIDATION_SPLIT * data.shape[0])
 
-X_train = data[:-num_validation_samples]
-y_train_cat = labels_cat[:-num_validation_samples]
-X_val = data[-num_validation_samples:]
-y_val_cat = labels_cat[-num_validation_samples:]
+
+X_train = data
+y_train_cat = labels_cat
 
 y_train = np.asarray(y_train_cat.argmax(axis=1))
-y_val = np.asarray(y_val_cat.argmax(axis=1))
 
 X_test = data_test
 y_test = np.asarray(labels_test)
@@ -165,7 +157,7 @@ callbacks = [EarlyStopping(monitor='val_loss', patience=5, verbose=0)]
 
 
 
-#从这里开始定义自己的网络模型
+#start our model
 input_a = Input(shape=(input_length,))
 embedding_layer=Embedding(output_dim=w2vDimension,
                         input_dim=n_symbols,
@@ -177,12 +169,12 @@ embedding_layer=Embedding(output_dim=w2vDimension,
 blstm = Bidirectional(LSTM(hidden_dim_1, return_sequences=True))(embedding_layer)
 
 concatenate = Concatenate(axis=2)([blstm,embedding_layer])
-"for EXT droput is here."
+
 concatenate=Dropout(rate=0.25)(concatenate)
 # dense=Dense(hidden_dim_2,activation="relu")(concatenate)
 # dense=Dropout(rate=0.25)(dense)
 out = TimeDistributed(Dense(hidden_dim_2, activation="relu"))(concatenate)
-"for AGR droput is here."
+
 
 reshape=Reshape(target_shape=(input_length,hidden_dim_2,1))(out)
 # pool_rnn = MaxPooling2D(pool_size=(input_length,1))(dropout)  #8.9 modified
@@ -195,8 +187,11 @@ pool_rnn = MaxPooling2D(pool_size=(20,1))(reshape)  #8.9 modified
 
 
 conv1=Conv2D(filters=10,kernel_size=(1,1),activation="relu")(pool_rnn)
+#conv1=Dropout(rate=0.25)(conv1)
 conv2=Conv2D(filters=10,kernel_size=(2,1),activation="relu")(pool_rnn)
+#conv2=Dropout(rate=0.25)(conv2)
 conv3=Conv2D(filters=10,kernel_size=(3,1),activation="relu")(pool_rnn)
+#conv3=Dropout(rate=0.25)(conv3)
 
 max1 = MaxPooling2D(pool_size=(25, 1))(conv1)
 max2 = MaxPooling2D(pool_size=(24, 1))(conv2)
@@ -221,7 +216,6 @@ rcnn_model = Model(input=input_a, output=output)
 from keras import metrics
 rcnn_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=[metrics.categorical_accuracy])
 print(rcnn_model.summary())
-
 
 
 
