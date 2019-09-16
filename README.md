@@ -7,18 +7,21 @@ The paper can be downloaded at:
 
 Please cite our paper if you use this code in your own research.
 
->X. Sun, B. Liu, J. Cao, J. Luo and X. Shen, "Who Am I? Personality Detection Based on Deep Learning for Texts," 2018 IEEE International Conference on Communications (ICC), Kansas City, MO, 2018, pp. 1-6.
+X. Sun, B. Liu, J. Cao, J. Luo and X. Shen, "Who Am I? Personality Detection Based on Deep Learning for Texts," 2018 IEEE International Conference on Communications (ICC), Kansas City, MO, 2018, pp. 1-6.
 
->@inproceedings{sunwhoamI,
->title = {Who am I? Personality detection based on deep learning for texts},
->journal = {IEEE International Conference on Communications},
->author = {Sun, Xiangguo and Liu, Bo and Cao, Jiuxin and Luo, Junzhou and Shen, Xiaojun},
->volume = {2018-May},
->year = {2018},
->issn = {15503607},
->address = {Kansas City, MO, United states},
->URL = {http://dx.doi.org/10.1109/ICC.2018.8422105},
->} 
+```
+@inproceedings{sunwhoamI,
+title = {Who am I? Personality detection based on deep learning for texts},
+journal = {IEEE International Conference on Communications},
+author = {Sun, Xiangguo and Liu, Bo and Cao, Jiuxin and Luo, Junzhou and Shen, Xiaojun},
+volume = {2018-May},
+year = {2018},
+issn = {15503607},
+address = {Kansas City, MO, United states},
+URL = {http://dx.doi.org/10.1109/ICC.2018.8422105},
+}
+```
+
 
 
 
