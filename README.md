@@ -37,9 +37,6 @@ An optimized version of this code can be found [here](https://github.com/sunxian
 ================How to Train Our Model?==========================
 
 
-Author: Xiangguo Sun
-
-E-mail: sunxiangguo@seu.edu.cn
 
 Although it is never an easy job to train a deep learning model, there are still some tricks you can use.
 
